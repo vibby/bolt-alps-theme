@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ htmllang() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {# make sure we always display a proper title: The record's title if there is one, appended with the
+           sitename. If there is no title, we append the sitename with the payoff, if there is one. #}
+        <title>
+            {%- if record.title is defined %}{{ record.title|striptags }} | {% endif -%}
+                {{ config.get('general/sitename') -}}
+            {% if record.title is not defined and config.get('general/payoff') %} | {{ config.get('general/payoff') }}{% endif -%}
+        </title>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,400i,700|Montserrat|Oswald" media="all">
+        <link rel="stylesheet" type="text/css" href="//cdn.adventist.org/alps/2/latest/css/main.css" media="all">
+        <script src="//cdn.adventist.org/alps/2/latest/js/head-script.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock body %}
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="//cdn.adventist.org/alps/2/latest/js/script.min.js" type="text/javascript"></script>
+
+    </body>
+</html>

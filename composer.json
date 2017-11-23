@@ -1,0 +1,28 @@
+{
+    "name": "vibby/bolt-alps-theme",
+    "description": "",
+    "type": "bolt-theme",
+    "keywords": [
+    ],
+    "repositories": {
+        "alps": {
+            "type": "vcs",
+            "url": "https://github.com/vibby/bolt-alps-extension"
+        }
+    },
+    "require": {
+        "vibby/bolt-alps-extension": "@dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vibby",
+            "email": "vincent@beauvivre.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
