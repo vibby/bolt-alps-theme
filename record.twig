@@ -1,0 +1,7 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    {% include '@templates/basic-page@complete.twig' with {
+        'heading': record.title,
+    } %}
+{% endblock %}

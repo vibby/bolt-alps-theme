@@ -1,0 +1,6 @@
+theme:
+  # see https://alps.adventist.io/?p=atoms-colors
+  # Available : emperor, earth, grapevine, denim, campfire, treefrog, ming
+  primary: denim
+  # Available : warm, cool
+  secondary: cool
