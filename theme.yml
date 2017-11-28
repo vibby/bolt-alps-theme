@@ -4,3 +4,15 @@ theme:
   primary: denim
   # Available : warm, cool
   secondary: cool
+
+video_caption: '©Église Adventiste du 7ème Jour de Nantes'
+
+layout:
+  carousel_2column: true
+
+queries:
+  home_video: 'predications/latest/1'
+  home_main: 'articles/latest/5'
+  aside: 'evenements/latest/3'
+  home_story: 'livres/latest/1'
+  carousel: 'slideshow/latest/3'
