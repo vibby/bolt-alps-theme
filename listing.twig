@@ -1,6 +1,6 @@
 {% extends 'layout.twig' %}
 
-{% set heading = "Articles" %}
 {% block body %}
-    {% include '@templates/search@complete.twig' %}
+    {% set heading = records|first.contenttype.name %}
+    {% include '@templates/basic-page@complete.twig' %}
 {% endblock %}

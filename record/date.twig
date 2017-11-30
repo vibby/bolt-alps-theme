@@ -1,0 +1,73 @@
+<div class="content__block">
+    <h3 class="theme--primary-text-color font--secondary--m">{{ record.title|date('l j F') }}</h3>
+    {% if record.special %}
+        <p><strong>{{ record.special|nl2br }}</strong></p>
+    {% endif %}
+    {% if record.title|date('w') == 6 %}
+        <p>9h30: Étude de la Bible</p>
+        <p>11h: Culte ({{ record.predication }})</p>
+    {% endif %}
+    {% if record.other %}
+        <p>{{ record.other|nl2br }}</p>
+    {% endif %}
+    {% if record.afternoon %}
+        <p>{{ record.afternoon|nl2br }}</p>
+    {% endif %}
+    <h4>En détail</h4>
+    <ul>
+        {% if record.elders != '' %}
+            <li>Anciens : {{ record.elders }}</li>
+        {% endif %}
+        {% if record.sabbath_school_mission != '' %}
+            <li>Bulletin mission : {{ record.sabbath_school_mission }}</li>
+        {% endif %}
+        {% if record.sabbath_school_prayer != '' %}
+            <li>Prière de la catéchèse : {{ record.sabbath_school_prayer }}</li>
+        {% endif %}
+        {% if record.sabbath_school_presidence != '' %}
+            <li>Présidence de la catéchèse : {{ record.sabbath_school_presidence }}</li>
+        {% endif %}
+        {% if record.pray_cell != '' %}
+            <li>Cellule de prière : {{ record.pray_cell }}</li>
+        {% endif %}
+        {% if record.sing_leader != '' %}
+            <li>Chantre : {{ record.sing_leader }}</li>
+        {% endif %}
+        {% if record.deacon != '' %}
+            <li>Diacre : {{ record.deacon }}</li>
+        {% endif %}
+        {% if record.slideshow != '' %}
+            <li>Diaporama : {{ record.slideshow }}</li>
+        {% endif %}
+        {% if record.presidence != '' %}
+            <li>Présidence : {{ record.presidence }}</li>
+        {% endif %}
+        {% if record.kids_story != '' %}
+            <li>Histoire pour les enfants : {{ record.kids_story }}</li>
+        {% endif %}
+        {% if record.bible_reader != '' %}
+            <li>Lecture de la Bible : {{ record.bible_reader }}</li>
+        {% endif %}
+        {% if record.belief_reader != '' %}
+            <li>Lecture des croyances fondamentales : {{ record.belief_reader }}</li>
+        {% endif %}
+        {% if record.musician != '' %}
+            <li>Musicien : {{ record.musician }}</li>
+        {% endif %}
+        {% if record.cleaner != '' %}
+            <li>Ménage : {{ record.cleaner }}</li>
+        {% endif %}
+        {% if record.pastoral_pray != '' %}
+            <li>Prière pastorale : {{ record.pastoral_pray }}</li>
+        {% endif %}
+        {% if record.predication != '' %}
+            <li>Prédication : {{ record.predication }}</li>
+        {% endif %}
+        {% if record.pray_meeting != '' %}
+            <li>Réunion de prière : {{ record.pray_meeting }}</li>
+        {% endif %}
+        {% if record.sonorisation != '' %}
+            <li>Sonorisation : {{ record.sonorisation }}</li>
+        {% endif %}
+    </ul>
+</div>

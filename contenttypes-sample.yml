@@ -1,0 +1,304 @@
+# This file defines the contenttypes on the website. See the documentation for
+# details: https://docs.bolt.cm/contenttypes/intro
+
+pages:
+    name: Pages
+    singular_name: Page
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        image:
+            type: image
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        template:
+            type: templateselect
+            filter: '*.twig'
+    taxonomy: [ groups ]
+    recordsperpage: 100
+
+blocks:
+    name: Blocks
+    singular_name: Block
+    fields:
+        title:
+            type: text
+            class: large
+            group: "Block"
+        slug:
+            type: slug
+            uses: [ title ]
+        content:
+            type: html
+            height: 150px
+        contentlink:
+            type: text
+            label: Link
+            placeholder: 'contenttype/slug or http://example.org/'
+            postfix: "Use this to add a link for this Block. This could either be an 'internal' link like <tt>page/about</tt>, if you use a contenttype/slug combination. Otherwise use a proper URL, like `http://example.org`."
+        image:
+            type: image
+            attrib: title
+            extensions: [ gif, jpg, png ]
+    show_on_dashboard: true
+    viewless: true
+    default_status: published
+    searchable: false
+    icon_many: "fa:cubes"
+    icon_one: "fa:cube"
+
+articles:
+    name: Articles
+    singular_name: Article
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        image:
+            type: image
+            group: media
+        video:
+            type: video
+    record_template: article.twig
+    listing_template: listing.twig
+    listing_records: 10
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20
+
+predications:
+    name: Predications
+    singular_name: Predication
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        image:
+            type: image
+            group: media
+        video:
+            type: video
+    record_template: predication.twig
+    listing_template: predications.twig
+    listing_records: 10
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20
+
+evenements:
+    name: Évenements
+    singular_name: Évenement
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        teaser:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+        image:
+            type: image
+            group: media
+        video:
+            type: video
+    record_template: event.twig
+    listing_template: listing.twig
+    listing_records: 10
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20
+
+liens:
+    name: Liens
+    singular_name: Lien
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        link:
+            type: text
+    record_template: liens.twig
+    listing_template: listing.twig
+    listing_records: 10
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20
+
+livres:
+    name: Livres
+    singular_name: Livres
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        subtitle:
+            type: text
+            group: content
+        slug:
+            type: slug
+            uses: title
+        link:
+            type: text
+        cta:
+            type: text
+        teaser:
+            type: html
+            height: 150px
+        cover:
+            type: image
+        author_pic:
+            type: image
+    record_template: livre.twig
+    listing_template: listing.twig
+    listing_records: 10
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20
+
+planning:
+    name: Dates
+    singular_name: Date
+    fields:
+        title:
+            type: date
+            group: date
+        slug:
+            type: slug
+            uses: date
+            group: date
+        other:
+            type: text
+            class: large
+            group: date
+        afternoon:
+            type: text
+            class: large
+            group: date
+        special:
+            type: text
+            group: date
+        elders:
+            type: text
+            group: roles
+        sabbath_school_mission:
+            type: text
+            group: roles
+        sabbath_school_prayer:
+            type: text
+        sabbath_school_presidence:
+            type: text
+            group: roles
+        pray_cell:
+            type: text
+            group: roles
+        sing_leader:
+            type: text
+            group: roles
+        deacon:
+            type: text
+            group: roles
+        slideshow:
+            type: text
+            group: roles
+        presidence:
+            type: text
+            group: roles
+        kids_story:
+            type: text
+            group: roles
+        bible_reader:
+            type: text
+            group: roles
+        belief_reader:
+            type: text
+            group: roles
+        musician:
+            type: text
+            group: roles
+        cleaner:
+            type: text
+            group: roles
+        pastoral_pray:
+            type: text
+            group: roles
+        predication:
+            type: text
+            group: roles
+        pray_meeting:
+            type: text
+            group: roles
+        sonorisation:
+            type: text
+            group: roles
+    record_template: date.twig
+    listing_template: dates.twig
+    listing_records: 10
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20
+
+slideshow:
+    name: Slideshows
+    singular_name: Slideshow
+    fields:
+        title:
+            type: text
+            class: large
+        subtitle:
+            type: text
+            class: large
+        teaser:
+            type: html
+            height: 150px
+        cta:
+            type: text
+        link:
+            type: text
+        image:
+            type: image
+    record_template: event.twig
+    listing_template: listing.twig
+    listing_records: 0
+    default_status: published
+    sort: -datepublish
+    recordsperpage: 20

@@ -1,0 +1,9 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    {% set record_template = 'record/date.twig' %}
+    {% set heading = 'Prochainement à l’église' %}
+    {% setcontent records = 'planning' where { title: '>= today' } orderby 'title' %}
+    {% set dates = records %}
+    {% include '@templates/basic-page@complete.twig' %}
+{% endblock %}

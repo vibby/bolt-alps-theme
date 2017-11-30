@@ -1,0 +1,24 @@
+
+{% if record.video %}
+    {% set img = null %}
+{% else %}
+    {% set img = {
+        "src": image(record.image, 200, 200),
+        "alt": record.title,
+    } %}
+{% endif %}
+{% set block = {
+    "block_inner_class": block_inner_class,
+    "title": record.title,
+    "img": img,
+    "datetime": false,
+    "date": false,
+    "description": record.teaser,
+    "cta": record.title,
+    "video": record.video,
+} %}
+{%  set url = '/' ~ record.contenttype.slug ~ '/' ~ record.slug %}
+{% if record_template is not defined %}
+    {% set record_template = '@molecules/blocks/media-block.twig' %}
+{% endif %}
+{% include record_template with {'media_block_default': block, 'url': url} %}
