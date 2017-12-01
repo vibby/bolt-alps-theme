@@ -42,8 +42,12 @@ cd extension
 composer update
 ```
 
-* Edit config file ```app/config/config.yml```
+In Bolt admin :
 
-* Search theme line and fill it with : ```theme: bolt-alps-theme```
+* Edit config file ```app/config/config.yml```, Search theme line and fill it with : ```theme: bolt-alps-theme```
+
+* in extension, go to theme extension and click on «copy to theme folder»
+
+* copy sample content type file in theme file contenttype-sample.yml, to your contenttype.yml
 
 You should be done !
