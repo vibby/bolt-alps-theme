@@ -1,0 +1,23 @@
+{% setcontent dates = 'planning' where { title: '>= today' } limit 3 orderby 'title' %}
+
+<div class="spacing">
+    <h3 class="font--tertiary--m theme--secondary-text-color">Prochains rendez-vous</h3>
+    {% for date in dates %}
+        <div class="content__block">
+            <h3 class="theme--primary-text-color font--secondary--m">{{ date.title|localizeddate('full', 'none', 'fr_FR')|ucfirst|replace({' 2017': ''}) }}</h3>
+            {% if date.title|date('w') == 6 %}
+                <p>9h30: Étude de la Bible</p>
+                <p>11h: Culte ({{ date.predication }})</p>
+            {% endif %}
+            {% if date.other %}
+                <p>{{ date.other|nl2br }}</p>
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+    <p>
+        <a href="/planning" class="font--secondary--s upper theme--secondary-text-color">
+            <strong>Tout le planning</strong>
+        </a>
+    </p>
+</div>

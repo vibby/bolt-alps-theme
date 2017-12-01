@@ -49,6 +49,8 @@ blocks:
             type: image
             attrib: title
             extensions: [ gif, jpg, png ]
+        cta:
+            type: text
     show_on_dashboard: true
     viewless: true
     default_status: published
@@ -225,6 +227,7 @@ planning:
             group: roles
         sabbath_school_prayer:
             type: text
+            group: roles
         sabbath_school_presidence:
             type: text
             group: roles
@@ -296,9 +299,4 @@ slideshow:
             type: text
         image:
             type: image
-    record_template: event.twig
-    listing_template: listing.twig
-    listing_records: 0
-    default_status: published
-    sort: -datepublish
-    recordsperpage: 20
+    viewless: true
