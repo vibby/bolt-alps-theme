@@ -1,0 +1,14 @@
+
+{% set footer_menu_items = [] %}
+{% for item in menu %}
+    {% set footer_menu_item = [{
+        'url':        item.path,
+        'text':       item.label|default('-'),
+    }] %}
+    {% set footer_menu_items = footer_menu_items|merge(footer_menu_item) %}
+{% endfor %}
+{% set footer_nav = {
+    'items': footer_menu_items
+} %}
+
+{% include '@molecules_source/navigation/footer-navigation.twig' %}

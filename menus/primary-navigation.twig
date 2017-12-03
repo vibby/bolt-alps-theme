@@ -1,0 +1,24 @@
+
+{% set primary_menu_items = [] %}
+{% for item in menu %}
+    {% set primary_submenu_items = {} %}
+    {% for submenu in item.submenu %}
+        {% set primary_submenu_item = [{
+            'url':  submenu.path,
+            'text': submenu.label|default('-'),
+        }] %}
+        {% set primary_submenu_items = primary_submenu_items|merge(primary_submenu_item) %}
+    {% endfor %}
+    {% set primary_menu_item = [{
+        'has_subnav': primary_submenu_items != {},
+        'sub_items':  primary_submenu_items,
+        'url':        item.path,
+        'text':       item.label|default('-'),
+    }] %}
+    {% set primary_menu_items = primary_menu_items|merge(primary_menu_item) %}
+{% endfor %}
+{% set primary_nav = {
+    'items': primary_menu_items
+} %}
+
+{% include '@molecules_source/navigation/primary-navigation.twig' %}

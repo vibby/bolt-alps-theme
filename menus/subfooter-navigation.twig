@@ -1,0 +1,14 @@
+
+{% set subfooter_menu_items = [] %}
+{% for item in menu %}
+    {% set subfooter_menu_item = [{
+        'url':        item.path,
+        'text':       item.label|default('-'),
+    }] %}
+    {% set subfooter_menu_items = subfooter_menu_items|merge(subfooter_menu_item) %}
+{% endfor %}
+{% set subfooter_nav = {
+    'items': subfooter_menu_items
+} %}
+
+{% include '@molecules_source/navigation/subfooter-navigation.twig' %}
