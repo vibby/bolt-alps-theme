@@ -16,15 +16,17 @@ queries:
   aside: 'evenements/latest/3'
   home_story: 'livres/latest/1'
   carousel: 'slideshow/latest/3'
-  
-path_cdn: //cdn.adventist.org/alps/2/latest/
+
+# Choose here to serve assets from cdn (production) or from local version (development)
+#path_cdn: //cdn.adventist.org/alps/2/latest/
+path_cdn: /theme/bolt-alps-theme/cdn/
 
 footer_message: Nantes-Adventiste.com est le site officiel de l’église Adventiste du Septième Jour de Nantes
 subfooter_message: Copyright &copy; 2016, Conférence Générale de l’Église Adventiste du Septième Jour
 
 address:
   address: 42 Boulevard Auguste Péneau
-  postCode: 44300
+  postcode: 44300
   locality: Nantes
   country: France
   phonenumber: 02.40.49.65.18
