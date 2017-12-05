@@ -1,0 +1,11 @@
+
+logo__link--square .logo__text {
+    height: auto;
+}
+.logo__link img {
+    max-height: 6rem;
+}
+.logo__label {
+    font-size: 2.4rem;
+    color: #FFF;
+}

@@ -1,0 +1,52 @@
+# This file defines the menus on the website. See the documentation for
+# details: https://docs.bolt.cm/configuration/menus
+
+primary:
+    - label: Actualités
+      title: Les articles de notre Église de Nantes
+      path: /articles
+    - label: Vie d’église
+      path: entry/1
+      submenu:
+          - label: Planning
+            path: /planning
+          - label: Prédications
+            path: /predications
+          - label: Conseils de lecture
+            path: /livres
+    - label: Adventiste
+      path: entry/1
+      submenu:
+          - label: Qui sommes-nous ?
+            path: /page/l-eglise-adventiste-du-7eme-jour
+          - label: La Bible
+            path: /page/bible
+          - label: Nos actions
+            path: /page/nos-actions
+          - label: Ce que nous croyons
+            path: /page/nos-croyances
+          - label: Chiffres mondiaux
+            path: /page/statistiques
+    - label: Événements
+      path: /evenements
+    - label: Nous rencontrer
+      link: /pages/contact
+
+secondary:
+    - label: 42 boulevard Péneau 44300 Nantes
+      title: Adresse postale
+      path: /page/contact
+    - label: 02.40.49.65.18
+      path: tel://0240496518
+
+footer:
+    - label: Fédération France Nord
+      path: http://ffn.adventiste.org
+    - label: Union Franco-belge
+      path: http://ufb.adventiste.org
+
+subfooter:
+    - label: Infos logo
+      path: https://identity.adventist.org/global-elements/the-church-symbol/
+    - label: Infos légales
+      path: /
