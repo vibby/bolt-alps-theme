@@ -1,5 +1,5 @@
 <div class="content__block">
-    <h3 class="theme--primary-text-color font--secondary--m">{{ record.title|localizeddate('full', 'none', 'fr_FR')|ucfirst|replace({' 2017': ''}) }}</h3>
+    <h3 class="theme--primary-text-color font--secondary--m">{{ record.title|humanizeDate }}</h3>
     {% if record.special %}
         <p><strong>{{ record.special|nl2br }}</strong></p>
     {% endif %}
