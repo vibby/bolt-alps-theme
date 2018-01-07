@@ -228,7 +228,7 @@ planning:
         sabbath_school_prayer:
             type: text
             group: roles
-        sabbath_school_presidence:
+        sabbath_school_presidency:
             type: text
             group: roles
         pray_cell:
@@ -243,7 +243,7 @@ planning:
         slideshow:
             type: text
             group: roles
-        presidence:
+        presidency:
             type: text
             group: roles
         kids_story:
@@ -270,7 +270,7 @@ planning:
         pray_meeting:
             type: text
             group: roles
-        sonorisation:
+        sound_booth:
             type: text
             group: roles
     record_template: date.twig
