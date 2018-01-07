@@ -7,6 +7,7 @@
         "alt": record.title,
     } %}
 {% endif %}
+{% set url = '/' ~ record.contenttype.slug ~ '/' ~ record.slug %}
 {% set block = {
     "block_inner_class": block_inner_class,
     "title": record.title,
@@ -16,8 +17,8 @@
     "description": record.teaser,
     "cta": record.title,
     "video": record.video,
+    "url": url,
 } %}
-{%  set url = '/' ~ record.contenttype.slug ~ '/' ~ record.slug %}
 {% if record_template is not defined %}
     {% set record_template = '@molecules/blocks/media-block.twig' %}
 {% endif %}
