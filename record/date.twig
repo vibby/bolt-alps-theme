@@ -13,7 +13,33 @@
     {% if record.afternoon %}
         <p>{{ record.afternoon|nl2br }}</p>
     {% endif %}
-    <h4>En détail</h4>
+    {% if record.pray_meeting != '' %}
+        <p>Réunion de prière : {{ record.pray_meeting }}</p>
+    {% endif %}
+    {% if record.special
+        ~ record.title
+        ~ record.other
+        ~ record.afternoon
+        ~ record.pray_meeting
+        and record.elders
+        ~ record.sabbath_school_mission
+        ~ record.sabbath_school_prayer
+        ~ record.sabbath_school_presidency
+        ~ record.pray_cell
+        ~ record.sing_leader
+        ~ record.deacon
+        ~ record.slideshow
+        ~ record.presidency
+        ~ record.kids_story
+        ~ record.bible_reader
+        ~ record.belief_reader
+        ~ record.musician
+        ~ record.cleaner
+        ~ record.pastoral_pray
+        ~ record.predication
+        ~ record.sound_booth %}
+        <br /><h4>En détail</h4>
+    {% endif %}
     <ul>
         {% if record.elders != '' %}
             <li>Anciens : {{ record.elders }}</li>
@@ -62,9 +88,6 @@
         {% endif %}
         {% if record.predication != '' %}
             <li>Prédication : {{ record.predication }}</li>
-        {% endif %}
-        {% if record.pray_meeting != '' %}
-            <li>Réunion de prière : {{ record.pray_meeting }}</li>
         {% endif %}
         {% if record.sound_booth != '' %}
             <li>Sonorisation : {{ record.sound_booth }}</li>
